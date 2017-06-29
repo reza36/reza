@@ -227,8 +227,8 @@ function tdcli_update_callback(data)
 						send(msg.chat_id_, msg.id_, "لیست لینک های ذخیره شده بطورکلی پاکسازی شد.")
 						redis:del("botBOT-IDsavedlinks")
 					end
-				elseif text:match("^(stp) (.*)$") then
-					local matches = text:match("^stp (.*)$")
+				elseif text:match("^(sp) (.*)$") then
+					local matches = text:match("^sp (.*)$")
 					if matches == "sp" then	
 						redis:set("botBOT-IDmaxjoin", true)
 						redis:set("botBOT-IDoffjoin", true)
@@ -245,7 +245,7 @@ function tdcli_update_callback(data)
 						return send(msg.chat_id_, msg.id_, "ok")
 					end
 				elseif text:match("^(beg) (.*)$") then
-					local matches = text:match("^strt (.*)$")
+					local matches = text:match("^beg (.*)$")
 					if matches == "join" then	
 						redis:del("botBOT-IDmaxjoin")
 						redis:del("botBOT-IDoffjoin")
